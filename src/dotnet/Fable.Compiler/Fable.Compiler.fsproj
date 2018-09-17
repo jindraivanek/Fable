@@ -27,6 +27,7 @@
     <Compile Include="Transforms/FSharp2Fable.fs" />
     <Compile Include="Transforms/FableTransforms.fs" />
     <Compile Include="Transforms/Fable2Babel.fs" />
+    <Compile Include="Transforms/Fable2Ocaml.fs" />
     <Compile Include="Transforms/State.fs" />
     <Compile Include="CLI/CLI.Util.fs" />
     <Compile Include="CLI/Parser.fs" />

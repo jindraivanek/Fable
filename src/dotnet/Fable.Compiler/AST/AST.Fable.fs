@@ -102,6 +102,7 @@ type File(sourcePath, decls, ?usedVarNames, ?dependencies) =
     member __.Declarations: Declaration list = decls
     member __.UsedVarNames: Set<string> = defaultArg usedVarNames Set.empty
     member __.Dependencies: Set<string> = defaultArg dependencies Set.empty
+    override __.ToString() = sprintf "%A" decls
 
 type IdentKind =
     | UnespecifiedIdent

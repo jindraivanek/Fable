@@ -201,6 +201,10 @@ let startCompilation (msgHandler: Server.MessageHandler) (com: Compiler) (projec
             else
                 let babel =
                     FSharp2Fable.Compiler.transformFile com project.ImplementationFiles
+                    |> fun x ->
+                        System.IO.File.WriteAllText(sprintf "ast-%s.ast" (System.IO.Path.GetFileName x.SourcePath), 
+                            sprintf "%A" x.Declarations)
+                        x
                     |> FableTransforms.optimizeFile com
                     |> Fable2Babel.Compiler.transformFile com
                 // If this is the first compilation, add errors to each respective file
